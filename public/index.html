@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Countries</title>
-    <script src="./js/bundle.js"></script>
+    <script type="text/javascript" src="./js/bundle.js"></script>
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <div id="app">
+        <h1 v-if="countries!==null" v-model="totalPopulation">Total population: {{ totalPopulation }} </h1>
 
-
+        <div class="countries" v-for="country in countries">
+            
+          <label for="countryName">Country name:<h4 id="countryName">{{country.name}}</h4></label>
+          <label for="countryPopulation">Country population:<h4 id="countryPopulation">{{country.population}}</h4></label>
+        </div>
     </div>
   </body>
   
